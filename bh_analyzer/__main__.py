@@ -1,6 +1,6 @@
 import argparse, threading, time, webbrowser, logging
 def main():
-    p = argparse.ArgumentParser(prog="bloodbober")
+    p = argparse.ArgumentParser(prog="mrxblood")
     p.add_argument("--host", default="127.0.0.1")
     p.add_argument("--port","-p", type=int, default=5000)
     p.add_argument("--no-browser", action="store_true")
@@ -8,7 +8,7 @@ def main():
     a = p.parse_args()
     if not a.debug: logging.getLogger('werkzeug').setLevel(logging.ERROR)
     url = "http://{}:{}".format('localhost' if a.host in ('0.0.0.0','127.0.0.1') else a.host, a.port)
-    print(f"\n+------------------------------------------------------+\n|  BLOODBOBER v1.4.4 -- Attack Path Analyzer  🦫      |\n|  {url:<50}|\n|  Ctrl+C -> stop                                      |\n+------------------------------------------------------+\n")
+    print(f"\n+------------------------------------------------------+\n|  MRX BLOOD v1.4.4 -- Attack Path Analyzer            |\n|  {url:<50}|\n|  Ctrl+C -> stop                                      |\n+------------------------------------------------------+\n")
     if not a.no_browser:
         def _o(): time.sleep(1.0); webbrowser.open(url)
         threading.Thread(target=_o, daemon=True).start()

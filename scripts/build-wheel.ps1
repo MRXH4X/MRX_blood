@@ -46,9 +46,9 @@ if ($LASTEXITCODE -ne 0) {
     exit $LASTEXITCODE
 }
 
-$Wheel = Get-ChildItem -Path (Join-Path $Root "dist") -Filter "blood_bober-*.whl" |
+$Wheel = Get-ChildItem -Path (Join-Path $Root "dist") -Filter "mrx_blood-*.whl" |
     Sort-Object @{ Expression = {
-        [version](($_.BaseName -replace '^blood_bober-', '' -replace '-py3-none-any$', ''))
+        [version](($_.BaseName -replace '^mrx_blood-', '' -replace '-py3-none-any$', ''))
     } } -Descending |
     Select-Object -First 1
 if (Test-Path $Wheel) {

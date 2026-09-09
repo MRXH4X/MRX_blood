@@ -3,9 +3,9 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "blood-bober"
+name = "mrx-blood"
 version = "1.4.4"
-description = "BloodBober - BloodHound Attack Path Analyzer"
+description = "MRX Blood - BloodHound Attack Path Analyzer"
 readme = "README.md"
 requires-python = ">=3.9"
 license = "MIT"
@@ -19,7 +19,7 @@ production = [
 ]
 
 [project.scripts]
-bloodbober = "bh_analyzer.__main__:main"
+mrxblood = "bh_analyzer.__main__:main"
 bh-analyzer = "bh_analyzer.__main__:main"
 
 [tool.setuptools]

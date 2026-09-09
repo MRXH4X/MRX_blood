@@ -1,35 +1,29 @@
-<p align="center">
-  <img src="bloodbober.jpg" alt="BloodBober" width="280">
-</p>
+# MRX Blood - BloodHound Attack Path Analyzer
 
-# BloodBober - BloodHound Attack Path Analyzer
-
-`BloodBober` is a small local Flask web application for reviewing BloodHound ZIP exports, highlighting interesting ACLs, delegation findings, roasting opportunities, and attack paths.
+`MRX Blood` is a local Flask web application for reviewing BloodHound ZIP exports, highlighting interesting ACLs, delegation findings, roasting opportunities, and attack paths.
 
 ## Credits
 
 Project creator: [MRXH4X](https://github.com/MRXH4X)
-
-Special thanks for the Bober Edition version.
 
 ## Install
 
 ### Linux
 
 ```bash
-pipx install "$(printf '%s\n' dist/blood_bober-*.whl | sort -V | tail -n 1)"
+pipx install "$(printf '%s\n' dist/mrx_blood-*.whl | sort -V | tail -n 1)"
 ```
 
 ### Windows / PowerShell
 
 ```powershell
-pipx install (Get-ChildItem dist/blood_bober-*.whl | Sort-Object { [version](($_.BaseName -replace '^blood_bober-', '' -replace '-py3-none-any$', '')) } | Select-Object -Last 1).FullName
+pipx install (Get-ChildItem dist/mrx_blood-*.whl | Sort-Object { [version](($_.BaseName -replace '^mrx_blood-', '' -replace '-py3-none-any$', '')) } | Select-Object -Last 1).FullName
 ```
 
 For the optional production WSGI server dependency:
 
 ```bash
-pipx inject blood-bober waitress
+pipx inject mrx-blood waitress
 ```
 
 ## Usage
@@ -37,7 +31,7 @@ pipx inject blood-bober waitress
 Start the app:
 
 ```bash
-bloodbober
+mrxblood
 ```
 
 By default it listens on `127.0.0.1:5000` and opens the browser automatically.
@@ -45,9 +39,9 @@ By default it listens on `127.0.0.1:5000` and opens the browser automatically.
 Useful options:
 
 ```bash
-bloodbober --host 127.0.0.1 --port 5000
-bloodbober --no-browser
-bloodbober --debug
+mrxblood --host 127.0.0.1 --port 5000
+mrxblood --no-browser
+mrxblood --debug
 ```
 
 Then load a BloodHound ZIP file in the web UI and mark owned principals in the sidebar.
